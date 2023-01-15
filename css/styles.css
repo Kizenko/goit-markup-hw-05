@@ -98,6 +98,9 @@ ol {
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--animation-timing-function);
 }
+.current {
+  color: #404bbf;
+}
 .menu-item.current::after {
   content: "";
   position: absolute;
@@ -156,7 +159,7 @@ ol {
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/office.jpg);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 .hero .container {
@@ -373,17 +376,20 @@ ol {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-property: border-color, color;
+  transition-property: border-color;
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--animation-timing-function);
+  color: #998e97;
 }
 .customers-link:hover,
 .customers-link:focus {
   border-color: #404bbf;
-  color: #404bbf;
 }
 .customers-link .customers-icon {
-  fill: #8e8f99;
+  fill: currentColor;
+  transition-property: fill;
+  transition-duration: var(--animation-duration);
+  transition-timing-function: var(--animation-timing-function);
 }
 .customers-link:hover .customers-icon,
 .customers-link:focus .customers-icon {
@@ -474,16 +480,12 @@ ol {
   border: 1px solid #e7e9fc;
   border-radius: 4px;
 
-  transition-property: background-color, box-shadow;
+  transition-property: background-color, box-shadow, color;
   transition-duration: var(--animation-duration);
   transition-timing-function: var(--animation-timing-function);
 }
 .filter-btn:hover,
 .filter-btn:focus {
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
   color: #ffffff;
   background-color: var(--brand-color);
   cursor: pointer;
@@ -509,6 +511,9 @@ ol {
   margin-right: 24px;
   margin-bottom: 48px;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+  transition-property: box-shadow;
+  transition-duration: var(--animation-duration);
+  transition-timing-function: var(--animation-timing-function);
 }
 .filter-img-link {
   display: block;
@@ -602,8 +607,10 @@ ol {
 .overlay.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0);
 }
+
 .modal-close {
   position: absolute;
+  display: flex;
   top: 24px;
   right: 24px;
   width: 24px;
@@ -612,6 +619,8 @@ ol {
   background-color: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  align-items: center;
+  justify-items: center;
 }
 .is-hidden {
   opacity: 0;
